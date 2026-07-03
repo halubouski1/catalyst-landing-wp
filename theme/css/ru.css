@@ -1,0 +1,115 @@
+.footer {
+  background: #000 url('../assets/img/footer.png') left -80px center / 100% auto no-repeat;
+}
+
+.work-card--text--first .work-card__desc {
+    max-width: 429px;
+}
+
+.team-card__role {
+    font-size: 18px;
+    max-width: 319px;
+}
+
+.work-card--text--first .work-card__desc {
+    max-width: 357px;
+}
+
+.work-card--text--third .work-card__desc {
+    max-width: 350px;
+}
+
+.work-card--text--first .work-card__title {
+    max-width: 295px;
+}
+
+.work-card--text--third .work-card__desc {
+    max-width: 365px;
+}
+
+.footer__contact-desc {
+    max-width: 326px;
+}
+
+.about__text {
+    max-width: 735px;
+}
+
+@media (max-width: 1919px) {
+    .about__text {
+        max-width: 554px;
+    }
+
+    .work-card--text--first .work-card__desc {
+        max-width: 299px;
+    }
+
+    .work-card--text--third .work-card__desc {
+        max-width: 292px;
+    }
+
+    .work-card--text--first .work-card__title {
+        max-width: 226px;
+    }
+
+    .work-card--text--third .work-card__desc {
+        max-width: 293px;
+    }
+
+    .footer__contact-desc {
+        max-width: 292px;
+    }
+
+    .team-card__role {
+        font-size: 13px;
+        max-width: 218px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .footer {
+        background: #0b0b0b url(../assets/img/footer.png) left -100px center / 100% auto no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        background: #0b0b0b url(../assets/img/footer.png) bottom center / 100% auto no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 570px) {
+    .hero__title {
+        font-size: 29px;
+    }
+
+    .hero__text {
+        max-width: 294px;
+    }
+
+    .about__p {
+        font-size: 28px;
+        max-width: 337px;
+    }
+
+    .info-label h3 {
+        max-width: 90%;
+    }
+
+    .team__title {
+        max-width: 209px;
+    }
+
+    .team-card__role {
+        font-size: 14px;
+    }
+
+    .footer {
+        padding: 10px 20px 500px;
+        background-image: url(../assets/img/footer-mobile-2.png);
+        background-position: center top 77%;
+        background-size: 354px 640px;
+    }
+}

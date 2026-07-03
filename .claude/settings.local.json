@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:1111/?v=__TRACKED_VAR__)",
+      "Bash(grep -oE '<meta name=\"\\(description|keywords\\)\" content=\"[^\"]{0,50}')",
+      "Bash(curl -s http://localhost:1111/ru/?v=__TRACKED_VAR__)",
+      "Bash(docker compose *)",
+      "Bash(curl -s -o /dev/null -w \"theme-settings admin code=%{http_code}\\\\n\" \"http://localhost:1111/wp-admin/admin.php?page=theme-settings\")"
+    ]
+  }
+}
