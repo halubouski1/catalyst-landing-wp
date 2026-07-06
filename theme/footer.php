@@ -38,7 +38,7 @@ $catalyst_brand_svg = '<svg width="57" height="35" viewBox="0 0 57 35" fill="non
 		<!-- Left column -->
 		<div class="footer__left">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer__logo">
-				<img src="<?php echo esc_url( catalyst_logo_url() ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+				<img src="<?php echo esc_url( catalyst_logo_url( 'logo_footer' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>">
 			</a>
 			<nav class="footer__nav">
 				<?php

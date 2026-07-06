@@ -387,13 +387,15 @@ function catalyst_opt_lang( $name, $default_en = '', $default_ru = '' ) {
 }
 
 /**
- * Site logo URL: the uploaded ACF logo, or the bundled logo.svg fallback.
+ * Logo URL: the uploaded ACF logo for the given field, or the bundled
+ * logo.svg fallback. Use 'logo' for the header and 'logo_footer' for the footer.
  *
+ * @param string $field Option field name.
  * @return string
  */
-function catalyst_logo_url() {
+function catalyst_logo_url( $field = 'logo' ) {
 	if ( function_exists( 'get_field' ) ) {
-		$logo = get_field( 'logo', 'option' );
+		$logo = get_field( $field, 'option' );
 		if ( is_array( $logo ) && ! empty( $logo['url'] ) ) {
 			return $logo['url'];
 		}
@@ -1021,14 +1023,25 @@ add_action(
 				'fields'     => array(
 					array(
 						'key'           => 'field_catalyst_logo',
-						'label'         => 'Logo',
+						'label'         => 'Header logo',
 						'name'          => 'logo',
 						'type'          => 'image',
 						'return_format' => 'array',
 						'preview_size'  => 'medium',
 						'library'       => 'all',
 						'mime_types'    => 'svg,png,jpg,jpeg,webp',
-						'instructions'  => 'Used in the header, overlay menu and footer. Falls back to the bundled logo if empty.',
+						'instructions'  => 'Used in the header and overlay menu. Falls back to the bundled logo if empty.',
+					),
+					array(
+						'key'           => 'field_catalyst_logo_footer',
+						'label'         => 'Footer logo',
+						'name'          => 'logo_footer',
+						'type'          => 'image',
+						'return_format' => 'array',
+						'preview_size'  => 'medium',
+						'library'       => 'all',
+						'mime_types'    => 'svg,png,jpg,jpeg,webp',
+						'instructions'  => 'Used in the footer. Falls back to the bundled logo if empty.',
 					),
 				),
 				'location'   => array(
