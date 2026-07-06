@@ -106,8 +106,9 @@ function catalyst_document_title( $title ) {
 		}
 	}
 	if ( is_front_page() || is_page_template( 'page-landing-ru.php' ) ) {
-		$default = 'Визы ОАЭ 2026, ВНЖ при покупке недвижимости и регистрация компании в Дубае | Catalyst Advisory';
-		$seo     = catalyst_opt_lang( 'seo_title', $default, $default );
+		$default_en = 'UAE Visas, Residency & Company Setup in Dubai — Turnkey Legal Support | Catalyst Advisory';
+		$default_ru = 'Визы ОАЭ 2026, ВНЖ при покупке недвижимости и регистрация компании в Дубае | Catalyst Advisory';
+		$seo        = catalyst_opt_lang( 'seo_title', $default_en, $default_ru );
 		if ( '' !== $seo ) {
 			return $seo;
 		}
@@ -127,8 +128,9 @@ function catalyst_meta_description() {
 			return $v;
 		}
 	}
-	$default = 'Визы ОАЭ для россиян 2026, Золотая виза на 10 лет, ВНЖ в Дубае при покупке недвижимости. Регистрация компании, лицензия, открытие счета в банке ОАЭ. Корпоративный налог 9% — под ключ. Юридическое сопровождение в Дубае.';
-	return catalyst_opt_lang( 'seo_description', $default, $default );
+	$default_en = 'UAE visas for foreign nationals 2026, 10-year Golden Visa, UAE residency when buying property in Dubai. Company registration, licensing, opening a bank account in the UAE. 9% corporate tax — turnkey. Legal support in Dubai.';
+	$default_ru = 'Визы ОАЭ для россиян 2026, Золотая виза на 10 лет, ВНЖ в Дубае при покупке недвижимости. Регистрация компании, лицензия, открытие счета в банке ОАЭ. Корпоративный налог 9% — под ключ. Юридическое сопровождение в Дубае.';
+	return catalyst_opt_lang( 'seo_description', $default_en, $default_ru );
 }
 
 function catalyst_meta_keywords() {
@@ -1171,7 +1173,7 @@ add_action(
 						'label'         => 'Title (EN)',
 						'name'          => 'seo_title',
 						'type'          => 'text',
-						'default_value' => 'Визы ОАЭ 2026, ВНЖ при покупке недвижимости и регистрация компании в Дубае | Catalyst Advisory',
+						'default_value' => 'UAE Visas, Residency & Company Setup in Dubai — Turnkey Legal Support | Catalyst Advisory',
 					),
 					array(
 						'key'           => 'field_catalyst_seo_title_ru',
@@ -1187,7 +1189,7 @@ add_action(
 						'type'          => 'textarea',
 						'rows'          => 3,
 						'new_lines'     => '',
-						'default_value' => 'Визы ОАЭ для россиян 2026, Золотая виза на 10 лет, ВНЖ в Дубае при покупке недвижимости. Регистрация компании, лицензия, открытие счета в банке ОАЭ. Корпоративный налог 9% — под ключ. Юридическое сопровождение в Дубае.',
+						'default_value' => 'UAE visas for foreign nationals 2026, 10-year Golden Visa, UAE residency when buying property in Dubai. Company registration, licensing, opening a bank account in the UAE. 9% corporate tax — turnkey. Legal support in Dubai.',
 					),
 					array(
 						'key'           => 'field_catalyst_seo_description_ru',
