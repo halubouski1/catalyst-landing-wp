@@ -438,6 +438,32 @@ function catalyst_option_image_url( $field, $fallback_rel, $size = 'large' ) {
 	return get_theme_file_uri( $fallback_rel );
 }
 
+/**
+ * URL of an ACF option file (e.g. a video), or a bundled fallback.
+ *
+ * @param string $field        Option field name.
+ * @param string $fallback_rel Theme-relative fallback path.
+ * @return string
+ */
+function catalyst_option_file_url( $field, $fallback_rel ) {
+	if ( function_exists( 'get_field' ) ) {
+		$file = get_field( $field, 'option' );
+		if ( is_array( $file ) ) {
+			if ( ! empty( $file['url'] ) ) {
+				return $file['url'];
+			}
+		} elseif ( is_numeric( $file ) ) {
+			$url = wp_get_attachment_url( (int) $file );
+			if ( $url ) {
+				return $url;
+			}
+		} elseif ( is_string( $file ) && '' !== $file ) {
+			return $file;
+		}
+	}
+	return get_theme_file_uri( $fallback_rel );
+}
+
 /* -------------------------------------------------------------------------
  * SVG upload support (admins only, with sanitization)
  * ---------------------------------------------------------------------- */
@@ -1232,6 +1258,45 @@ add_action(
 						'name'          => 'seo_robots_ru',
 						'type'          => 'text',
 						'default_value' => 'index, follow',
+					),
+				),
+				'location'   => array(
+					array(
+						array(
+							'param'    => 'options_page',
+							'operator' => '==',
+							'value'    => 'theme-settings',
+						),
+					),
+				),
+			)
+		);
+
+		acf_add_local_field_group(
+			array(
+				'key'        => 'group_catalyst_hero',
+				'title'      => __( 'Hero', 'catalyst' ),
+				'menu_order' => 4,
+				'fields'     => array(
+					array(
+						'key'          => 'field_catalyst_hero_video',
+						'label'        => 'Hero video (desktop)',
+						'name'         => 'hero_video',
+						'type'         => 'file',
+						'return_format' => 'url',
+						'library'      => 'all',
+						'mime_types'   => 'mp4,webm,ogg',
+						'instructions' => 'Background video for the hero. Falls back to the bundled video if empty.',
+					),
+					array(
+						'key'          => 'field_catalyst_hero_video_mobile',
+						'label'        => 'Hero video (mobile)',
+						'name'         => 'hero_video_mobile',
+						'type'         => 'file',
+						'return_format' => 'url',
+						'library'      => 'all',
+						'mime_types'   => 'mp4,webm,ogg',
+						'instructions' => 'Shown on screens up to 570px. Falls back to the bundled mobile video if empty.',
 					),
 				),
 				'location'   => array(

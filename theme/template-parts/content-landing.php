@@ -13,8 +13,8 @@ $catalyst_team = catalyst_team_members();
 
 <section class="hero" id="hero">
 	<video class="hero__video" autoplay muted loop playsinline>
-		<source src="<?php echo esc_url( get_theme_file_uri( 'assets/vid/hero-mob.mp4' ) ); ?>" media="(max-width: 570px)">
-		<source src="<?php echo esc_url( get_theme_file_uri( 'assets/vid/hero.mp4' ) ); ?>">
+		<source src="<?php echo esc_url( catalyst_option_file_url( 'hero_video_mobile', 'assets/vid/hero-mob.mp4' ) ); ?>" media="(max-width: 570px)">
+		<source src="<?php echo esc_url( catalyst_option_file_url( 'hero_video', 'assets/vid/hero.mp4' ) ); ?>">
 	</video>
 
 	<div class="hero__inner">
