@@ -467,6 +467,17 @@ function catalyst_option_file_url( $field, $fallback_rel ) {
 }
 
 /* -------------------------------------------------------------------------
+ * Media: keep uploads at full size / quality
+ * ---------------------------------------------------------------------- */
+
+// Don't auto-scale large images down to 2560px (no "-scaled" copies).
+add_filter( 'big_image_size_threshold', '__return_false' );
+
+// Don't re-compress: use maximum quality for JPEG/WebP.
+add_filter( 'jpeg_quality', function () { return 100; } );
+add_filter( 'wp_editor_set_quality', function () { return 100; } );
+
+/* -------------------------------------------------------------------------
  * SVG upload support (admins only, with sanitization)
  * ---------------------------------------------------------------------- */
 
