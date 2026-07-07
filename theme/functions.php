@@ -858,10 +858,10 @@ function catalyst_team_members() {
 			$url = '';
 			$alt = '';
 			if ( is_array( $img ) ) {
-				$url = isset( $img['sizes']['large'] ) ? $img['sizes']['large'] : ( $img['url'] ?? '' );
+				$url = $img['url'] ?? '';
 				$alt = $img['alt'] ?? '';
 			} elseif ( is_numeric( $img ) ) {
-				$url = (string) wp_get_attachment_image_url( (int) $img, 'large' );
+				$url = (string) wp_get_attachment_image_url( (int) $img, 'full' );
 			}
 			$raw[] = array(
 				'image'   => $url,

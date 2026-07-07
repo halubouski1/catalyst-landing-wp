@@ -79,7 +79,7 @@ $catalyst_team = catalyst_team_members();
 	<div class="work__grid" data-aos="fade-up" data-aos-duration="900">
 
 		<!-- 01: image card -->
-		<div class="work-card work-card--img" style="background-image: url('<?php echo esc_url( catalyst_option_image_url( 'work_image_1', 'assets/img/workwith-card-1.png' ) ); ?>')">
+		<div class="work-card work-card--img" style="background-image: url('<?php echo esc_url( catalyst_option_image_url( 'work_image_1', 'assets/img/workwith-card-1.png', 'full' ) ); ?>')">
 			<div class="work-card__head">
 				<span class="work-card__num">[ 01</span>
 				<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +127,7 @@ $catalyst_team = catalyst_team_members();
 		</div>
 
 		<!-- 04: image card -->
-		<div class="work-card work-card--img" style="background-image: url('<?php echo esc_url( catalyst_option_image_url( 'work_image_2', 'assets/img/workwith-card-2.png' ) ); ?>')">
+		<div class="work-card work-card--img" style="background-image: url('<?php echo esc_url( catalyst_option_image_url( 'work_image_2', 'assets/img/workwith-card-2.png', 'full' ) ); ?>')">
 			<div class="work-card__head">
 				<span class="work-card__num">[ 04</span>
 				<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
